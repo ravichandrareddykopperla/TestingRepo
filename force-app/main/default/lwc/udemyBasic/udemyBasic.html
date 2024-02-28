@@ -1,0 +1,34 @@
+<template>
+    <lightning-card>
+   <lightning-card title="Two Way Data Binding" >
+    <div class="slds-var-m-around_medium">
+    <lightning-input type="text" label="Enter Your Name" onkeyup={changeHandler}></lightning-input>
+    <div> {input1} ! This is {input2}. </div>
+</div>
+   </lightning-card> <br/>
+
+   <lightning-card title="@track Property" >
+    <div class="slds-var-m-around_medium">
+    <lightning-input type="text" label="Enter City Name" onkeyup={trackHandler}></lightning-input>
+    <lightning-input type="text" label="Enter State Name" onkeyup={trackHandler2}></lightning-input>
+    <lightning-input type="text" label="Enter Country Name" onkeyup={trackHandler3}></lightning-input><br/>
+    <div> 
+        <h1> Adress </h1><br/>
+    City = {adress.City}<br/>
+    State = {adress.State}<br/>
+    Country = {adress.Country}<br/>
+</div>
+</div>
+   </lightning-card> <br/>
+
+   <lightning-card title="Getter Demo">
+    <div class="slds-var-m-around_medium">
+    <lightning-input type="text" label="Enter First Number" onkeyup={mulHandler}></lightning-input>
+    <lightning-input type="text" label="Enter First Number" onkeyup={mulHandler2}></lightning-input><br/>
+        <header><b> Users </b> </header>
+    first user = {firstuser}<br/>
+    Value of {num1} * {num2} is : {mulValue}
+    </div>
+   </lightning-card> 
+   </lightning-card>
+</template>

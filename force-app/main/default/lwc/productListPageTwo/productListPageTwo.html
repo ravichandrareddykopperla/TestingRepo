@@ -1,0 +1,29 @@
+<template>
+    <div onclick={handleClick} >
+        <div class="content slds-p-around_medium">  
+            <lightning-card>                                                               
+                    <img src={prod.ResourceURL__c} class="slds-align_absolute-center carImage"
+                    alt="Car picture"/>
+        
+                    <div>
+                        <p class="title slds-align_absolute-center">{prod.Product__r.Name}</p>
+                        <p class="slds-align_absolute-center">
+                            MSRP:
+                            <lightning-formatted-number format-style="currency"
+                            currency-code="INR" value={prod.Product__r.Price__c} class="price"
+                            maximum-fraction-digits="0"></lightning-formatted-number>
+                        </p>
+                    </div> 
+                    <div class="slds-align_absolute-center">
+                        <lightning-button-icon icon-name="utility:add" variant="brand-outline"  title="Increment" onclick={IncClick} class="slds-var-p-around_xxx-small"></lightning-button-icon>
+                        <p class="slds-p-around_medium">{count}</p>
+                        <lightning-button-icon icon-name="utility:dash" variant="brand-outline" title="Decrement" onclick={DecClick} class="slds-var-p-around_xxx-small"></lightning-button-icon>
+                    </div>
+                    <div class="slds-align_absolute-center">
+                       
+                        <lightning-button variant="brand" label="Add to Cart" title="Add to Cart" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                    </div>
+                </lightning-card> 
+            </div> 
+    </div>
+</template>

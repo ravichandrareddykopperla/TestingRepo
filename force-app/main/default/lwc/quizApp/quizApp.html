@@ -1,0 +1,51 @@
+<template>
+    <lightning-card title="Quiz App">
+        <div class="slds-m-around_medium">
+            <form>
+            <template for:each={questions} for:item="q">
+                <div key={q.id} class="slds-m-bottom_medium">
+                    <div><strong>
+                        {q.id} - {q.question}
+                    </strong></div>
+                    <div class="slds-grid slds-gutters slds-p-bottom_medium">
+                        <input type="radio" name={q.id} value="a" onchange={changeHandler}/>
+                        <div class="slds-col">
+                          <span>{q.answers.a}</span>
+                        </div>
+                        <input type="radio" name={q.id} value="b" onchange={changeHandler}/>
+                        <div class="slds-col">
+                          <span>{q.answers.b}</span>
+                        </div>
+                        <input type="radio" name={q.id} value="c" onchange={changeHandler}/>
+                        <div class="slds-col">
+                          <span>{q.answers.c}</span>
+                        </div>
+                      </div>
+                </div>
+            </template>
+            <lightning-button variant="brand"
+            type="submit"
+            label="Submit"
+            title="Submit Answers"
+            onclick={submitHandler}
+            disabled={AllNotSelected}
+            class="slds-m-around_small">
+            </lightning-button>
+            <lightning-button variant="brand"
+            type="reset"
+            label="Reset"
+            title="Reset Answers"
+            onclick={resetHandler}
+            class="slds-m-around_small">
+            </lightning-button>
+        </form><br/>
+        <template if:true={ooo}>
+            {cg}<br/>
+        Your Score - {correctAnswers}
+    </template>
+        </div>
+    </lightning-card>
+    <lightning-card>
+        <button onclick={callMe}> Click </button>
+    </lightning-card>
+</template>

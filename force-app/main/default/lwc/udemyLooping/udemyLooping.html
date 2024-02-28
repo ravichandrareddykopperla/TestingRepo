@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="for:each">
+        <div class="slds-var-m-around_medium">
+            <template for:each={places} for:item="places">
+                <ul key={places} class="slds-has-dividers_around-space">
+                    <li class="slds-item"> {places}</li>
+                </ul>
+            </template>
+        </div><br/>
+
+        <div class="slds-var-m-around_medium">
+            <template for:each={moviesList} for:item="item">
+                <ul key={item.id} class="slds-has-dividers_around-space">
+                    <li class="slds-item"> 
+                        <strong>{item.id}. {item.movie} </strong>
+                        : {item.actor}</li>
+                </ul>
+            </template>
+        </div>
+    </lightning-card><br/>
+    <lightning-card title="iterator">
+        <div class="slds-var-m-around_medium">
+            <template iterator:m ={moviesList} >
+                <ul key={m.value.id} class="slds-has-dividers_around-space">
+                    <li class="slds-item"> 
+                        <strong>{m.value.id}. {m.value.movie} </strong>
+                        : {m.value.actor}</li>
+                </ul>
+            </template>
+        </div>
+    </lightning-card>
+</template>

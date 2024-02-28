@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Conditional Rendering">
+        <lightning-button variant="brand" label="Show" title="Click to view" onclick={handleClick}
+            class="slds-m-left_x-small"></lightning-button>
+    </lightning-card>
+    <div class="slds-m-left_x-small">
+        <template if:true={isVisible}>
+            <b> BOOOOOOM </b>
+        </template>
+        <template if:false={isVisible}>
+            <b> Nothing to show </b>
+        </template>
+    </div><br/>
+
+    <div class="slds-p-around_medium lgc-bg">
+        <lightning-input type="text" label="Enter some text" onkeyup={inputText} placeholder="type here..."></lightning-input>
+    </div>
+    <template if:true={inputValue}>
+        <div> You Just Entered : <b>{value}</b> </div>
+    </template>
+</template>
